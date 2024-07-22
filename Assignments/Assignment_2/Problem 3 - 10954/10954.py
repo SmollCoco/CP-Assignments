@@ -20,4 +20,4 @@ while True:
         pQ.put(cost)
 
     print(res)
-
+    
