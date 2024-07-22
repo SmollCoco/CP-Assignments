@@ -1,25 +1,4 @@
-#include <iostream>
-#include <cstdio>
-#include <algorithm>
-#include <cstring>
-#include <string>
-#include <cctype>
-#include <stack>
-#include <queue>
-#include <list>
-#include <vector>
-#include <map>
-#include <sstream>
-#include <cmath>
-#include <bitset>
-#include <utility>
-#include <set>
-#include <numeric>
-#define INT_MAX 2147483647
-#define INT_MIN -2147483647
-#define pi acos(-1.0)
-#define N 1000000
-#define LL unsigned long long
+#include <bits/stdcpp.sh>
 using namespace std;
  
 int matrix[11][33];
