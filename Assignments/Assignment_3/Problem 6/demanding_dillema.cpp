@@ -1,4 +1,4 @@
-#include <bits/stdcpp.sh>
+#include <bits/stdc++.h>
 using namespace std;
  
 int matrix[11][33];
