@@ -37,4 +37,3 @@ for _ in range(m):
     backtrack()
     print(res_x[0])
     print(*res_y[0])
-
