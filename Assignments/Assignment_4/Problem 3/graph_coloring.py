@@ -1,3 +1,5 @@
+# Link to YT video: https://youtu.be/Shvw-qoVz3k
+
 m = int(input())
 
 for _ in range(m):
