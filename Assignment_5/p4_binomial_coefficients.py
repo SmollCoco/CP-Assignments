@@ -3,29 +3,44 @@ t = int(input())
 for _ in range(t):
     m = int(input())
 
-    memo = [[-1] * (n + 1) for n in range(m + 1)]
-    for p in range(m + 1):
-        memo[p][0] = 1
-        memo[p][-1] = 1
+    def eC(n: int, k: int) -> int:
+        ret = 1
+        for i in range(1, k + 1):
+            if ret > m:
+                return m + 1
+            ret *= (n - i + 1) / i
 
-    def comb(n, k):
-        if k == n or k == 0:
-            return memo[n][k]
-        if memo[n][k] == -1:
-            memo[n][k] = comb(n - 1, k - 1) + comb(n - 1, k)
-        return memo[n][k]
+        return round(ret)
 
-    l = 0
     res = []
+    k = 1
+    while eC(k, k) <= m:
+        k += 1
+    while k:
+        l, r = k, m + 1
+        best = -1
+        while l <= r:
+            mid = round((l + r) / 2)
+            if eC(mid, k) < m:
+                l = mid + 1
+            elif eC(mid, k) > m:
+                r = mid - 1
+            else:
+                best = mid
+                break
 
-    for n in range(2, m + 1):
-        for k in range(1, n // 2 + 1):
-            if comb(n, k) == m:
-                l += 2
-                res.append((n, k))
-                res.append((n, n - k))
+        if best != -1:
+            if k < best - k:
+                res.append((best, k))
+                res.append((best, best - k))
+            elif k == best - k:
+                res.append((best, k))
 
-    res.sort()
+        k -= 1
 
-    print(l)
-    print(*res)
+    print(l := len(res))
+    for i in range(l - 1):
+        n, k = res[i]
+        print(f"({n},{k})", end=" ")
+    n, k = res[l - 1]
+    print(f"({n},{k})")
