@@ -1,3 +1,5 @@
+# Link to YouTube video: https://youtu.be/YU00ygEdoBY
+
 while True:
     try:
         x = int(input())
