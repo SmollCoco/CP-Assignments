@@ -1,3 +1,5 @@
+# Link to YouTube video: https://youtu.be/ZUKbe-eR6Ck
+
 while True:
     try:
         A = input()
